@@ -44,6 +44,13 @@ namespace :db do
       end
     end
 
+    desc 'Download remote db'
+    task :download do
+      run_locally do
+        Database.download_remote(self)
+      end
+    end
+
     desc 'Replace your local database using a dump file from the DUMP_FILE ' \
          'environment variable'
     task :load do
