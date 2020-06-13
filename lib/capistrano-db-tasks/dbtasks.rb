@@ -46,7 +46,7 @@ namespace :db do
 
     desc 'Download remote db'
     task :download do
-      run_locally do
+      on roles(:db) do
         Database.download_remote(self)
       end
     end
